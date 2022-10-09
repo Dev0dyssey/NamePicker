@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		067D24B928F2C053000A19F8 /* NamePickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D24B828F2C053000A19F8 /* NamePickerApp.swift */; };
+		067D24BB28F2C053000A19F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D24BA28F2C053000A19F8 /* ContentView.swift */; };
+		067D24BD28F2C055000A19F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 067D24BC28F2C055000A19F8 /* Assets.xcassets */; };
+		067D24C028F2C055000A19F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 067D24BF28F2C055000A19F8 /* Preview Assets.xcassets */; };
+		067D24CA28F2C055000A19F8 /* NamePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D24C928F2C055000A19F8 /* NamePickerTests.swift */; };
+		067D24D428F2C055000A19F8 /* NamePickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D24D328F2C055000A19F8 /* NamePickerUITests.swift */; };
+		067D24D628F2C055000A19F8 /* NamePickerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D24D528F2C055000A19F8 /* NamePickerUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		067D24C628F2C055000A19F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 067D24AD28F2C053000A19F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 067D24B428F2C053000A19F8;
+			remoteInfo = NamePicker;
+		};
+		067D24D028F2C055000A19F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 067D24AD28F2C053000A19F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 067D24B428F2C053000A19F8;
+			remoteInfo = NamePicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		067D24B528F2C053000A19F8 /* NamePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NamePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		067D24B828F2C053000A19F8 /* NamePickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePickerApp.swift; sourceTree = "<group>"; };
+		067D24BA28F2C053000A19F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		067D24BC28F2C055000A19F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		067D24BF28F2C055000A19F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		067D24C528F2C055000A19F8 /* NamePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NamePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		067D24C928F2C055000A19F8 /* NamePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePickerTests.swift; sourceTree = "<group>"; };
+		067D24CF28F2C055000A19F8 /* NamePickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NamePickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		067D24D328F2C055000A19F8 /* NamePickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePickerUITests.swift; sourceTree = "<group>"; };
+		067D24D528F2C055000A19F8 /* NamePickerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePickerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		067D24B228F2C053000A19F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		067D24C228F2C055000A19F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		067D24CC28F2C055000A19F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		067D24AC28F2C053000A19F8 = {
+			isa = PBXGroup;
+			children = (
+				067D24B728F2C053000A19F8 /* NamePicker */,
+				067D24C828F2C055000A19F8 /* NamePickerTests */,
+				067D24D228F2C055000A19F8 /* NamePickerUITests */,
+				067D24B628F2C053000A19F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		067D24B628F2C053000A19F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				067D24B528F2C053000A19F8 /* NamePicker.app */,
+				067D24C528F2C055000A19F8 /* NamePickerTests.xctest */,
+				067D24CF28F2C055000A19F8 /* NamePickerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		067D24B728F2C053000A19F8 /* NamePicker */ = {
+			isa = PBXGroup;
+			children = (
+				067D24B828F2C053000A19F8 /* NamePickerApp.swift */,
+				067D24BA28F2C053000A19F8 /* ContentView.swift */,
+				067D24BC28F2C055000A19F8 /* Assets.xcassets */,
+				067D24BE28F2C055000A19F8 /* Preview Content */,
+			);
+			path = NamePicker;
+			sourceTree = "<group>";
+		};
+		067D24BE28F2C055000A19F8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				067D24BF28F2C055000A19F8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		067D24C828F2C055000A19F8 /* NamePickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				067D24C928F2C055000A19F8 /* NamePickerTests.swift */,
+			);
+			path = NamePickerTests;
+			sourceTree = "<group>";
+		};
+		067D24D228F2C055000A19F8 /* NamePickerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				067D24D328F2C055000A19F8 /* NamePickerUITests.swift */,
+				067D24D528F2C055000A19F8 /* NamePickerUITestsLaunchTests.swift */,
+			);
+			path = NamePickerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		067D24B428F2C053000A19F8 /* NamePicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 067D24D928F2C055000A19F8 /* Build configuration list for PBXNativeTarget "NamePicker" */;
+			buildPhases = (
+				067D24B128F2C053000A19F8 /* Sources */,
+				067D24B228F2C053000A19F8 /* Frameworks */,
+				067D24B328F2C053000A19F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NamePicker;
+			productName = NamePicker;
+			productReference = 067D24B528F2C053000A19F8 /* NamePicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		067D24C428F2C055000A19F8 /* NamePickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 067D24DC28F2C055000A19F8 /* Build configuration list for PBXNativeTarget "NamePickerTests" */;
+			buildPhases = (
+				067D24C128F2C055000A19F8 /* Sources */,
+				067D24C228F2C055000A19F8 /* Frameworks */,
+				067D24C328F2C055000A19F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				067D24C728F2C055000A19F8 /* PBXTargetDependency */,
+			);
+			name = NamePickerTests;
+			productName = NamePickerTests;
+			productReference = 067D24C528F2C055000A19F8 /* NamePickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		067D24CE28F2C055000A19F8 /* NamePickerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 067D24DF28F2C055000A19F8 /* Build configuration list for PBXNativeTarget "NamePickerUITests" */;
+			buildPhases = (
+				067D24CB28F2C055000A19F8 /* Sources */,
+				067D24CC28F2C055000A19F8 /* Frameworks */,
+				067D24CD28F2C055000A19F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				067D24D128F2C055000A19F8 /* PBXTargetDependency */,
+			);
+			name = NamePickerUITests;
+			productName = NamePickerUITests;
+			productReference = 067D24CF28F2C055000A19F8 /* NamePickerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		067D24AD28F2C053000A19F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					067D24B428F2C053000A19F8 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					067D24C428F2C055000A19F8 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 067D24B428F2C053000A19F8;
+					};
+					067D24CE28F2C055000A19F8 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 067D24B428F2C053000A19F8;
+					};
+				};
+			};
+			buildConfigurationList = 067D24B028F2C053000A19F8 /* Build configuration list for PBXProject "NamePicker" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 067D24AC28F2C053000A19F8;
+			productRefGroup = 067D24B628F2C053000A19F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				067D24B428F2C053000A19F8 /* NamePicker */,
+				067D24C428F2C055000A19F8 /* NamePickerTests */,
+				067D24CE28F2C055000A19F8 /* NamePickerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		067D24B328F2C053000A19F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				067D24C028F2C055000A19F8 /* Preview Assets.xcassets in Resources */,
+				067D24BD28F2C055000A19F8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		067D24C328F2C055000A19F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		067D24CD28F2C055000A19F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		067D24B128F2C053000A19F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				067D24BB28F2C053000A19F8 /* ContentView.swift in Sources */,
+				067D24B928F2C053000A19F8 /* NamePickerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		067D24C128F2C055000A19F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				067D24CA28F2C055000A19F8 /* NamePickerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		067D24CB28F2C055000A19F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				067D24D428F2C055000A19F8 /* NamePickerUITests.swift in Sources */,
+				067D24D628F2C055000A19F8 /* NamePickerUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		067D24C728F2C055000A19F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 067D24B428F2C053000A19F8 /* NamePicker */;
+			targetProxy = 067D24C628F2C055000A19F8 /* PBXContainerItemProxy */;
+		};
+		067D24D128F2C055000A19F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 067D24B428F2C053000A19F8 /* NamePicker */;
+			targetProxy = 067D24D028F2C055000A19F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		067D24D728F2C055000A19F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		067D24D828F2C055000A19F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		067D24DA28F2C055000A19F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NamePicker/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "thomas-martin.NamePicker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		067D24DB28F2C055000A19F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NamePicker/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "thomas-martin.NamePicker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		067D24DD28F2C055000A19F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "thomas-martin.NamePickerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NamePicker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NamePicker";
+			};
+			name = Debug;
+		};
+		067D24DE28F2C055000A19F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "thomas-martin.NamePickerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NamePicker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NamePicker";
+			};
+			name = Release;
+		};
+		067D24E028F2C055000A19F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "thomas-martin.NamePickerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NamePicker;
+			};
+			name = Debug;
+		};
+		067D24E128F2C055000A19F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "thomas-martin.NamePickerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NamePicker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		067D24B028F2C053000A19F8 /* Build configuration list for PBXProject "NamePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				067D24D728F2C055000A19F8 /* Debug */,
+				067D24D828F2C055000A19F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		067D24D928F2C055000A19F8 /* Build configuration list for PBXNativeTarget "NamePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				067D24DA28F2C055000A19F8 /* Debug */,
+				067D24DB28F2C055000A19F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		067D24DC28F2C055000A19F8 /* Build configuration list for PBXNativeTarget "NamePickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				067D24DD28F2C055000A19F8 /* Debug */,
+				067D24DE28F2C055000A19F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		067D24DF28F2C055000A19F8 /* Build configuration list for PBXNativeTarget "NamePickerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				067D24E028F2C055000A19F8 /* Debug */,
+				067D24E128F2C055000A19F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 067D24AD28F2C053000A19F8 /* Project object */;
+}
