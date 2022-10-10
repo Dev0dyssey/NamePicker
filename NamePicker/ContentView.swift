@@ -8,14 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
-    let names = ["Lucia", "Guy", "Ruth", "Nathan", "Santosh", "Jackson", "Chibu", "Agnel", "Samora", "Amy", "Maz", "Jon"]
+    struct TeamMember: Identifiable {
+        let id = UUID()
+        let name: String
+        var picked: Int
+    }
+    @State var names = [
+        TeamMember(name: "Lucia", picked: 0),
+        TeamMember(name: "Guy", picked: 0),
+        TeamMember(name: "Ruth", picked: 0),
+        TeamMember(name: "Nathan", picked: 0),
+        TeamMember(name: "Santosh", picked: 0),
+        TeamMember(name: "Jackson", picked: 0),
+        TeamMember(name: "Chibu", picked: 0),
+        TeamMember(name: "Agnel", picked: 0),
+        TeamMember(name: "Samora", picked: 0),
+        TeamMember(name: "Amy", picked: 0),
+        TeamMember(name: "Maz", picked: 0),
+        TeamMember(name: "Jon", picked: 0)
+//        "Lucia", "Guy", "Ruth", "Nathan", "Santosh", "Jackson", "Chibu", "Agnel", "Samora", "Amy", "Maz", "Jon"
+    ]
+    
     let columns = [ GridItem(.adaptive(minimum: 100)) ]
     @State private var selectedName = ""
     @State private var namePicked = false
+    @State private var timesPicked = 0
     func pickName() {
-        selectedName = names.randomElement() ?? "John Doe"
+        selectedName = names.randomElement()?.name ?? "John Doe"
         namePicked = true;
         print(selectedName)
+        
+        if let matchName =  names.first(where: {$0.name == selectedName}) {
+            timesPicked = matchName.picked
+        }
+        
+        if let index = names.firstIndex(where: {$0.name == selectedName}) {
+            names[index].picked += 1
+        }
     }
     
     var body: some View {
@@ -27,9 +56,9 @@ struct ContentView: View {
                 Text("Tap to choose name")
                     .font(.largeTitle.weight(.semibold))
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(names, id: \.self) {
+                    ForEach(names, id: \.id) {
                         item in
-                        Text(item)
+                        Text(item.name)
                             .padding()
                             .overlay(
                                 RoundedRectangle(cornerRadius: 15)
@@ -51,7 +80,7 @@ struct ContentView: View {
         .alert(selectedName, isPresented: $namePicked) {
             Button("Close", role: .cancel) {}
         } message: {
-            Text("Is the lucky winner")
+            Text("Is the lucky winner, they were picked a total of \(timesPicked) times")
         }
     }
 }
