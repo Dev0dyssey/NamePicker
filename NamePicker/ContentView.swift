@@ -12,20 +12,21 @@ struct ContentView: View {
         let id = UUID()
         let name: String
         var picked: Int
+        var selected: Bool
     }
     @State var names = [
-        TeamMember(name: "Lucia", picked: 0),
-        TeamMember(name: "Guy", picked: 0),
-        TeamMember(name: "Ruth", picked: 0),
-        TeamMember(name: "Nathan", picked: 0),
-        TeamMember(name: "Santosh", picked: 0),
-        TeamMember(name: "Jackson", picked: 0),
-        TeamMember(name: "Chibu", picked: 0),
-        TeamMember(name: "Agnel", picked: 0),
-        TeamMember(name: "Samora", picked: 0),
-        TeamMember(name: "Amy", picked: 0),
-        TeamMember(name: "Maz", picked: 0),
-        TeamMember(name: "Jon", picked: 0)
+        TeamMember(name: "Lucia", picked: 0, selected: false),
+        TeamMember(name: "Guy", picked: 0, selected: false),
+        TeamMember(name: "Ruth", picked: 0, selected: false),
+        TeamMember(name: "Nathan", picked: 0, selected: false),
+        TeamMember(name: "Santosh", picked: 0, selected: false),
+        TeamMember(name: "Jackson", picked: 0, selected: false),
+        TeamMember(name: "Chibu", picked: 0, selected: false),
+        TeamMember(name: "Agnel", picked: 0, selected: false),
+        TeamMember(name: "Samora", picked: 0, selected: false),
+        TeamMember(name: "Amy", picked: 0, selected: false),
+        TeamMember(name: "Maz", picked: 0, selected: false),
+        TeamMember(name: "Jon", picked: 0, selected: false)
 //        "Lucia", "Guy", "Ruth", "Nathan", "Santosh", "Jackson", "Chibu", "Agnel", "Samora", "Amy", "Maz", "Jon"
     ]
     
@@ -33,6 +34,7 @@ struct ContentView: View {
     @State private var selectedName = ""
     @State private var namePicked = false
     @State private var timesPicked = 0
+    @State private var selected = false
     func pickName() {
         selectedName = names.randomElement()?.name ?? "John Doe"
         namePicked = true;
@@ -65,6 +67,7 @@ struct ContentView: View {
                                     .stroke(.purple, lineWidth: 3)
                                     .frame(width: 100)
                             )
+//                            .background(selected ? .green : .white)
                     }
                 }
                 .padding(.horizontal)
