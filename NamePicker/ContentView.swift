@@ -31,10 +31,13 @@ struct ContentView: View {
     ]
     
     let columns = [ GridItem(.adaptive(minimum: 100)) ]
+    
     @State private var selectedName = ""
     @State private var namePicked = false
     @State private var timesPicked = 0
     @State private var selected = false
+    @State private var navSelection: String? = nil
+    
     func pickName() {
         selectedName = names.randomElement()?.name ?? "John Doe"
         namePicked = true;
@@ -49,41 +52,62 @@ struct ContentView: View {
         }
     }
     
-    var body: some View {
-        ZStack {
-            LinearGradient(colors: [.purple, .white], startPoint: .top, endPoint: .bottom)
-                .ignoresSafeArea()
+    struct SecondView: View {
+        var selectedTeamMember: String
+        var body: some View {
             VStack {
-                Spacer()
-                Text("Tap to choose name")
-                    .font(.largeTitle.weight(.semibold))
-                LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(names, id: \.id) {
-                        item in
-                        Text(item.name)
-                            .padding()
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 15)
-                                    .stroke(.purple, lineWidth: 3)
-                                    .frame(width: 100)
-                            )
-//                            .background(selected ? .green : .white)
-                    }
-                }
-                .padding(.horizontal)
-                Spacer()
-                Button("Choose name") {
-                    pickName()
-                }
-                    .buttonStyle(.borderedProminent)
-                    .tint(.cyan)
-                Spacer()
+                Text("The winner is: \(selectedTeamMember)")
             }
+            
         }
-        .alert(selectedName, isPresented: $namePicked) {
-            Button("Close", role: .cancel) {}
-        } message: {
-            Text("Is the lucky winner, they were picked a total of \(timesPicked) times")
+    }
+    
+    var body: some View {
+        NavigationStack {
+            ZStack {
+                LinearGradient(colors: [.purple, .white], startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea()
+                VStack {
+                    Spacer()
+                    Text("Tap to choose name")
+                        .font(.largeTitle.weight(.semibold))
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        ForEach(names, id: \.id) {
+                            item in
+                            Text(item.name)
+                                .padding()
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .stroke(.purple, lineWidth: 3)
+                                        .frame(width: 100)
+                                )
+    //                            .background(selected ? .green : .white)
+                        }
+                    }
+                    .padding(.horizontal)
+                    Spacer()
+                    
+                    NavigationLink(value: <#T##(Decodable & Encodable & Hashable)?#>, label: <#T##() -> View#>)
+                    
+//                    NavigationLink(destination: SecondView(selectedTeamMember: selectedName)) {
+//                        Text("Show detail View")
+//                    }
+//                    .buttonStyle(.borderedProminent)
+//                    .tint(.cyan)
+                    
+                    Button("Choose name") {
+                        pickName()
+                    }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.cyan)
+                    Spacer()
+                }
+            }
+            .alert(selectedName, isPresented: $namePicked) {
+                Button("Close", role: .cancel) {}
+            } message: {
+                Text("Is the lucky winner, they were picked a total of \(timesPicked) times")
+            }
         }
     }
 }
