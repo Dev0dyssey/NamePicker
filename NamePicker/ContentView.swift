@@ -37,11 +37,12 @@ struct ContentView: View {
     @State private var timesPicked = 0
     @State private var selected = false
     @State private var navSelection: String? = nil
+    @State private var shouldTransit = false
+    @State private var path: [String] = []
     
     func pickName() {
         selectedName = names.randomElement()?.name ?? "John Doe"
         namePicked = true;
-        print(selectedName)
         
         if let matchName =  names.first(where: {$0.name == selectedName}) {
             timesPicked = matchName.picked
@@ -50,6 +51,7 @@ struct ContentView: View {
         if let index = names.firstIndex(where: {$0.name == selectedName}) {
             names[index].picked += 1
         }
+        print(selectedName)
     }
     
     struct SecondView: View {
@@ -63,7 +65,7 @@ struct ContentView: View {
     }
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             ZStack {
                 LinearGradient(colors: [.purple, .white], startPoint: .top, endPoint: .bottom)
                     .ignoresSafeArea()
@@ -86,14 +88,22 @@ struct ContentView: View {
                     }
                     .padding(.horizontal)
                     Spacer()
-                    
-                    NavigationLink(value: <#T##(Decodable & Encodable & Hashable)?#>, label: <#T##() -> View#>)
-                    
-//                    NavigationLink(destination: SecondView(selectedTeamMember: selectedName)) {
-//                        Text("Show detail View")
+//                    Button("Go Search") {
+//                        path.append("SecondView")
 //                    }
-//                    .buttonStyle(.borderedProminent)
-//                    .tint(.cyan)
+//                    NavigationLink(value: path[0]) {
+//                        Text("New view")
+//                    }
+                    
+                    NavigationLink(destination: SecondView(selectedTeamMember: selectedName), isActive: $shouldTransit) {
+                        Text("Show detail View")
+                            .onTapGesture {
+                                self.pickName()
+                                self.shouldTransit = true
+                            }
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.cyan)
                     
                     Button("Choose name") {
                         pickName()
