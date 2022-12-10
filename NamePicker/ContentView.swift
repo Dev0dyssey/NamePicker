@@ -50,8 +50,9 @@ struct ContentView: View {
         
         if let index = names.firstIndex(where: {$0.name == selectedName}) {
             names[index].picked += 1
+            names[index].selected = true;
+            print(names[index]);
         }
-        print(selectedName)
     }
     
     struct SecondView: View {
@@ -83,17 +84,11 @@ struct ContentView: View {
                                         .stroke(.purple, lineWidth: 3)
                                         .frame(width: 100)
                                 )
-    //                            .background(selected ? .green : .white)
+                                .background(selected ? .green : .white)
                         }
                     }
                     .padding(.horizontal)
                     Spacer()
-//                    Button("Go Search") {
-//                        path.append("SecondView")
-//                    }
-//                    NavigationLink(value: path[0]) {
-//                        Text("New view")
-//                    }
                     
                     NavigationLink(destination: SecondView(selectedTeamMember: selectedName), isActive: $shouldTransit) {
                         Text("Show detail View")
