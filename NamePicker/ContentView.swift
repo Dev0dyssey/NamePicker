@@ -27,7 +27,6 @@ struct ContentView: View {
         TeamMember(name: "Amy", picked: 0, selected: false),
         TeamMember(name: "Maz", picked: 0, selected: false),
         TeamMember(name: "Jon", picked: 0, selected: false)
-//        "Lucia", "Guy", "Ruth", "Nathan", "Santosh", "Jackson", "Chibu", "Agnel", "Samora", "Amy", "Maz", "Jon"
     ]
     
     let columns = [ GridItem(.adaptive(minimum: 100)) ]
@@ -39,6 +38,9 @@ struct ContentView: View {
     @State private var navSelection: String? = nil
     @State private var shouldTransit = false
     @State private var path: [String] = []
+    @State private var indexPicked = 0
+    @State private var addMoreNamesAlert = false
+    @State private var addedNames = ""
     
     func pickName() {
         selectedName = names.randomElement()?.name ?? "John Doe"
@@ -50,9 +52,19 @@ struct ContentView: View {
         
         if let index = names.firstIndex(where: {$0.name == selectedName}) {
             names[index].picked += 1
-            names[index].selected = true;
-            print(names[index]);
+            names[index].selected = true
+            indexPicked = index
         }
+    }
+    
+    func addNames() {
+        let namesToAdd = addedNames.components(separatedBy: [" ", ","])
+        let transformedArray = namesToAdd.map{name -> TeamMember in
+            TeamMember(name: name, picked: 0, selected: false)
+        }
+        names.append(contentsOf: transformedArray)
+        addedNames = ""
+        
     }
     
     struct SecondView: View {
@@ -105,15 +117,44 @@ struct ContentView: View {
 //                    .buttonStyle(.borderedProminent)
 //                    .tint(.cyan)
                     
+                    HStack {
+                        Button("Add more names"){
+                            addMoreNamesAlert = true
+                        }
+                        .alert("Add names", isPresented: $addMoreNamesAlert){
+                            TextField("Enter additional names", text: $addedNames)
+                                .foregroundColor(.black)
+                            Button("Save") {
+                                addNames()
+                            }
+                            Button("Cancel", role: .cancel, action: {})
+                        }
+                        .buttonStyle(.bordered)
+                        .foregroundColor(.white)
+                        .tint(.indigo)
+                        
+                        Button("Clear All Names"){
+                           
+                        }
+                        .buttonStyle(.bordered)
+                        .foregroundColor(.white)
+                        .tint(.red)
+                    }
+
+                    
                     Button("Choose name") {
                         pickName()
                     }
                     .alert(selectedName, isPresented: $namePicked) {
-                        Button("Close", role: .cancel) {}
+                        Button("Close", role: .cancel) {
+                            names[indexPicked].selected = false
+                            namePicked = false
+                        }
                     } message: {
                         Text("Is the lucky winner, they were picked a total of \(timesPicked) times")
                     }
                     .buttonStyle(.borderedProminent)
+                    .foregroundColor(.white)
                     .tint(.cyan)
                     Spacer()
                 }
