@@ -64,7 +64,7 @@ struct ContentView: View {
             
         }
     }
-    
+    // Look at possibly refactoring the below code block into a more reusable and modular approach
     var body: some View {
         NavigationStack(path: $path) {
             ZStack {
@@ -72,47 +72,53 @@ struct ContentView: View {
                     .ignoresSafeArea()
                 VStack {
                     Spacer()
-                    Text("Tap to choose name")
+                    Text("CBeebies Name Picker")
                         .font(.largeTitle.weight(.semibold))
                     LazyVGrid(columns: columns, spacing: 20) {
                         ForEach(names, id: \.id) {
                             item in
-                            Text(item.name)
-                                .padding()
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 15)
-                                        .stroke(.purple, lineWidth: 3)
-                                        .frame(width: 100)
-                                )
-                                .background(selected ? .green : .white)
+                                RoundedRectangle(cornerRadius: 15, style: .continuous)
+                                    .strokeBorder(
+                                        item.selected ? .clear : .purple, lineWidth: 2
+                                    )
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 15, style: .continuous)
+                                            .fill(item.selected ? .green : .clear))
+                                            .frame(width: 100, height: 50)
+                                            .overlay(
+                                                Text(item.name)
+                                                    .foregroundColor(item.selected ? .white : .indigo)
+                                                    .padding()
+                                            )
                         }
                     }
                     .padding(.horizontal)
                     Spacer()
                     
-                    NavigationLink(destination: SecondView(selectedTeamMember: selectedName), isActive: $shouldTransit) {
-                        Text("Show detail View")
-                            .onTapGesture {
-                                self.pickName()
-                                self.shouldTransit = true
-                            }
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .tint(.cyan)
+//                    NavigationLink(destination: SecondView(selectedTeamMember: selectedName), isActive: $shouldTransit) {
+//                        Text("Show detail View")
+//                            .onTapGesture {
+//                                self.pickName()
+//                                self.shouldTransit = true
+//                            }
+//                    }
+//                    .buttonStyle(.borderedProminent)
+//                    .tint(.cyan)
                     
                     Button("Choose name") {
                         pickName()
                     }
-                        .buttonStyle(.borderedProminent)
-                        .tint(.cyan)
+                    .alert(selectedName, isPresented: $namePicked) {
+                        Button("Close", role: .cancel) {}
+                    } message: {
+                        Text("Is the lucky winner, they were picked a total of \(timesPicked) times")
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.cyan)
                     Spacer()
                 }
             }
-            .alert(selectedName, isPresented: $namePicked) {
-                Button("Close", role: .cancel) {}
-            } message: {
-                Text("Is the lucky winner, they were picked a total of \(timesPicked) times")
-            }
+
         }
     }
 }
