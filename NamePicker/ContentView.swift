@@ -68,6 +68,10 @@ struct ContentView: View {
         
     }
     
+    func clearAllnames() {
+        names = []
+    }
+    
     struct SecondView: View {
         var selectedTeamMember: String
         var body: some View {
@@ -135,11 +139,12 @@ struct ContentView: View {
                         .tint(.indigo)
                         
                         Button("Clear All Names"){
-                           
+                           clearAllnames()
                         }
                         .buttonStyle(.bordered)
                         .foregroundColor(.white)
                         .tint(.red)
+                        .disabled(names.isEmpty)
                     }
 
                     
@@ -157,6 +162,7 @@ struct ContentView: View {
                     .buttonStyle(.borderedProminent)
                     .foregroundColor(.white)
                     .tint(.cyan)
+                    .disabled(names.isEmpty)
                     Spacer()
                 }
             }
