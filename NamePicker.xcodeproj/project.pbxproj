@@ -14,6 +14,7 @@
 		067D24CA28F2C055000A19F8 /* NamePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D24C928F2C055000A19F8 /* NamePickerTests.swift */; };
 		067D24D428F2C055000A19F8 /* NamePickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D24D328F2C055000A19F8 /* NamePickerUITests.swift */; };
 		067D24D628F2C055000A19F8 /* NamePickerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067D24D528F2C055000A19F8 /* NamePickerUITestsLaunchTests.swift */; };
+		06BAFCFD29631A0C00A37247 /* NamePickerMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BAFCFC29631A0C00A37247 /* NamePickerMethods.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		067D24CF28F2C055000A19F8 /* NamePickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NamePickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		067D24D328F2C055000A19F8 /* NamePickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePickerUITests.swift; sourceTree = "<group>"; };
 		067D24D528F2C055000A19F8 /* NamePickerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePickerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		06BAFCFC29631A0C00A37247 /* NamePickerMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePickerMethods.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		067D24B728F2C053000A19F8 /* NamePicker */ = {
 			isa = PBXGroup;
 			children = (
+				06BAFCFE29631DEC00A37247 /* CustomMethods */,
 				067D24B828F2C053000A19F8 /* NamePickerApp.swift */,
 				067D24BA28F2C053000A19F8 /* ContentView.swift */,
 				067D24BC28F2C055000A19F8 /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				067D24D528F2C055000A19F8 /* NamePickerUITestsLaunchTests.swift */,
 			);
 			path = NamePickerUITests;
+			sourceTree = "<group>";
+		};
+		06BAFCFE29631DEC00A37247 /* CustomMethods */ = {
+			isa = PBXGroup;
+			children = (
+				06BAFCFC29631A0C00A37247 /* NamePickerMethods.swift */,
+			);
+			path = CustomMethods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				067D24BB28F2C053000A19F8 /* ContentView.swift in Sources */,
+				06BAFCFD29631A0C00A37247 /* NamePickerMethods.swift in Sources */,
 				067D24B928F2C053000A19F8 /* NamePickerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
