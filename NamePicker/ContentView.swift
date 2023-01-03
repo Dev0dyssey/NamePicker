@@ -59,6 +59,7 @@ struct ContentView: View {
     
     func addNames() {
     // Investigate why preview throws error on components(separatedBy: [" ", ","])
+    // Ask within SwiftUI community
         let namesToAdd = addedNames.components(separatedBy: " ")
         let transformedArray = namesToAdd.map{name -> TeamMember in
             TeamMember(name: name, picked: 0, selected: false)
