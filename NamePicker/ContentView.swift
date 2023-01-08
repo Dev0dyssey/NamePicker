@@ -30,6 +30,12 @@ struct ContentView: View {
     ]
     
     let columns = [ GridItem(.adaptive(minimum: 100)) ]
+
+    var namesList: [Any] {
+        return [names, "Custom One", "BBC", "Custom Two"]
+    }
+    
+    @State private var selectedNamesArray = "Cbeebies"
     
     @State private var selectedName = ""
     @State private var namePicked = false
@@ -79,7 +85,6 @@ struct ContentView: View {
             VStack {
                 Text("The winner is: \(selectedTeamMember)")
             }
-            
         }
     }
     // Look at possibly refactoring the below code block into a more reusable and modular approach
@@ -92,6 +97,11 @@ struct ContentView: View {
                     Spacer()
                     Text("CBeebies Name Picker")
                         .font(.largeTitle.weight(.semibold))
+//                    Picker("Please choose a color", selection: $selectedNamesArray) {
+//                        ForEach(namesList, id: \.self) {
+//                            Text($0)
+//                        }
+//                    }
                     LazyVGrid(columns: columns, spacing: 20) {
                         ForEach(names, id: \.id) {
                             item in
