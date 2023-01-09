@@ -14,6 +14,32 @@ struct ContentView: View {
         var picked: Int
         var selected: Bool
     }
+    
+    struct ArrayWithIdentifier: Identifiable {
+        let id: String
+        var array: [TeamMember]
+    }
+    
+    @State var names2: [ArrayWithIdentifier] = [
+        ArrayWithIdentifier(
+            id: "CBeebies",
+            array: [
+                TeamMember(name: "Lucia", picked: 0, selected: false),
+                TeamMember(name: "Guy", picked: 0, selected: false),
+                TeamMember(name: "Ruth", picked: 0, selected: false),
+                TeamMember(name: "Nathan", picked: 0, selected: false),
+                TeamMember(name: "Santosh", picked: 0, selected: false),
+                TeamMember(name: "Jackson", picked: 0, selected: false),
+                TeamMember(name: "Chibu", picked: 0, selected: false),
+                TeamMember(name: "Agnel", picked: 0, selected: false),
+                TeamMember(name: "Samora", picked: 0, selected: false),
+                TeamMember(name: "Amy", picked: 0, selected: false),
+                TeamMember(name: "Maz", picked: 0, selected: false),
+                TeamMember(name: "Jon", picked: 0, selected: false)
+            ]
+        )
+    ]
+    
     @State var names = [
         TeamMember(name: "Lucia", picked: 0, selected: false),
         TeamMember(name: "Guy", picked: 0, selected: false),
@@ -30,7 +56,7 @@ struct ContentView: View {
     ]
     
     let columns = [ GridItem(.adaptive(minimum: 100)) ]
-
+    
     var namesList: [Any] {
         return [names, "Custom One", "BBC", "Custom Two"]
     }
@@ -48,24 +74,31 @@ struct ContentView: View {
     @State private var addMoreNamesAlert = false
     @State private var addedNames = ""
     
+    func selectArray(id: String) -> [TeamMember]? {
+        if let arrayWithIdentifier = names2.first(where: {$0.id == id}) {
+            return arrayWithIdentifier.array
+        }
+        return nil
+    }
+    
     func pickName() {
-        selectedName = names.randomElement()?.name ?? "John Doe"
+        selectedName = names2.first?.array.randomElement()?.name ?? "John Doe"
         namePicked = true;
         
-        if let matchName =  names.first(where: {$0.name == selectedName}) {
+        if let matchName =  names2.first?.array.first(where: {$0.name == selectedName}) {
             timesPicked = matchName.picked
         }
         
-        if let index = names.firstIndex(where: {$0.name == selectedName}) {
-            names[index].picked += 1
-            names[index].selected = true
+        if let index = names2.first?.array.firstIndex(where: {$0.name == selectedName}) {
+            names2[0].array[index].picked += 1
+            names2[0].array[index].selected = true
             indexPicked = index
         }
     }
     
     func addNames() {
-    // Investigate why preview throws error on components(separatedBy: [" ", ","])
-    // Ask within SwiftUI community
+        // Investigate why preview throws error on components(separatedBy: [" ", ","])
+        // Ask within SwiftUI community
         let namesToAdd = addedNames.components(separatedBy: " ")
         let transformedArray = namesToAdd.map{name -> TeamMember in
             TeamMember(name: name, picked: 0, selected: false)
@@ -103,8 +136,10 @@ struct ContentView: View {
 //                        }
 //                    }
                     LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach(names, id: \.id) {
-                            item in
+                        ForEach(names2) {
+                            arrayWithIdentifier in
+                            ForEach(arrayWithIdentifier.array) {
+                                item in
                                 RoundedRectangle(cornerRadius: 15, style: .continuous)
                                     .strokeBorder(
                                         item.selected ? .clear : .purple, lineWidth: 2
@@ -112,12 +147,14 @@ struct ContentView: View {
                                     .background(
                                         RoundedRectangle(cornerRadius: 15, style: .continuous)
                                             .fill(item.selected ? .green : .clear))
-                                            .frame(width: 100, height: 50)
-                                            .overlay(
-                                                Text(item.name)
-                                                    .foregroundColor(item.selected ? .white : .indigo)
-                                                    .padding()
-                                            )
+                                    .frame(width: 100, height: 50)
+                                    .overlay(
+                                        Text(item.name)
+                                            .foregroundColor(item.selected ? .white : .indigo)
+                                            .padding()
+                                    )
+                            }
+                            
                         }
                     }
                     .padding(.horizontal)
@@ -150,21 +187,21 @@ struct ContentView: View {
                         .tint(.indigo)
                         
                         Button("Clear All Names"){
-                           clearAllnames()
+                            clearAllnames()
                         }
                         .buttonStyle(.bordered)
                         .foregroundColor(.white)
                         .tint(.red)
                         .disabled(names.isEmpty)
                     }
-
+                    
                     
                     Button("Choose name") {
                         pickName()
                     }
                     .alert(selectedName, isPresented: $namePicked) {
                         Button("Close", role: .cancel) {
-                            names[indexPicked].selected = false
+                            names2[0].array[indexPicked].selected = false
                             namePicked = false
                         }
                     } message: {
@@ -177,7 +214,7 @@ struct ContentView: View {
                     Spacer()
                 }
             }
-
+            
         }
     }
 }
