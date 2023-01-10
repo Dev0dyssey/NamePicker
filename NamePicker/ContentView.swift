@@ -57,11 +57,11 @@ struct ContentView: View {
     
     let columns = [ GridItem(.adaptive(minimum: 100)) ]
     
-    var namesList: [Any] {
-        return [names, "Custom One", "BBC", "Custom Two"]
-    }
+    var namesList =
+    ["CBeebies", "Custom One", "BBC", "Custom Two"]
     
-    @State private var selectedNamesArray = "Cbeebies"
+    
+    @State private var selectedNamesArray = "CBeebies"
     
     @State private var selectedName = ""
     @State private var namePicked = false
@@ -103,6 +103,7 @@ struct ContentView: View {
         let transformedArray = namesToAdd.map{name -> TeamMember in
             TeamMember(name: name, picked: 0, selected: false)
         }
+        let selectedArray = selectArray(id: selectedNamesArray);
         names.append(contentsOf: transformedArray)
         addedNames = ""
         
@@ -130,11 +131,11 @@ struct ContentView: View {
                     Spacer()
                     Text("CBeebies Name Picker")
                         .font(.largeTitle.weight(.semibold))
-//                    Picker("Please choose a color", selection: $selectedNamesArray) {
-//                        ForEach(namesList, id: \.self) {
-//                            Text($0)
-//                        }
-//                    }
+                    Picker("Please choose a color", selection: $selectedNamesArray) {
+                        ForEach(namesList, id: \.self) {
+                            Text($0)
+                        }
+                    }
                     LazyVGrid(columns: columns, spacing: 20) {
                         ForEach(names2) {
                             arrayWithIdentifier in
