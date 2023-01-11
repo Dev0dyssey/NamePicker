@@ -122,6 +122,7 @@ struct ContentView: View {
         }
     }
     // Look at possibly refactoring the below code block into a more reusable and modular approach
+    // Move methods into a separate helper file in the code
     var body: some View {
         NavigationStack(path: $path) {
             ZStack {
